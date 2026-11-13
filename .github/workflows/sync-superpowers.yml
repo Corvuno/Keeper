@@ -1,0 +1,40 @@
+name: Update the borrowed skills
+
+# Four skills in core/skills/ are copied unchanged from https://github.com/obra/superpowers (MIT):
+# brainstorming, systematic-debugging, test-driven-development, verification-before-completion.
+# This keeps them up to date with their source. Runs every Monday and when started by hand.
+# Only those four folders are touched.
+on:
+  schedule:
+    - cron: "40 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the source
+        run: git clone --depth 1 https://github.com/obra/superpowers "$RUNNER_TEMP/superpowers"
+      - name: Copy the four skills
+        run: |
+          for s in brainstorming systematic-debugging test-driven-development verification-before-completion; do
+            if [ -d "$RUNNER_TEMP/superpowers/skills/$s" ]; then
+              rm -rf "core/skills/$s"
+              cp -r "$RUNNER_TEMP/superpowers/skills/$s" "core/skills/$s"
+            else
+              echo "::warning::$s no longer exists upstream; kept the old copy"
+            fi
+          done
+      - name: Land the change, if there is one
+        run: |
+          git add -A core/skills
+          if git diff --cached --quiet; then echo "Already up to date."; exit 0; fi
+          SHA=$(git -C "$RUNNER_TEMP/superpowers" rev-parse --short HEAD)
+          git config user.name "Keeper skills update"
+          git config user.email "keeper-skills@users.noreply.github.com"
+          git commit -m "Borrowed skills updated to obra/superpowers $SHA"
+          git push -q

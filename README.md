@@ -10,6 +10,10 @@ This repository holds the generic part, the same for every product:
 - `core/` — what the Keeper is (`skills/keeper/`), its helpers (`agents/`: one builder, one
   checker, one searcher) and its reminders (`hooks/`). `skills/keeper/owner.md` is personal to
   the owner and is the one file another owner would replace.
+- `core/skills/` also holds four skills borrowed unchanged from
+  https://github.com/obra/superpowers and kept up to date with it: `brainstorming` (finding out
+  what is wanted before anything is built), `systematic-debugging`, `test-driven-development`
+  and `verification-before-completion`. See `THIRD-PARTY.md`.
 - `cases/` — misses and successes that were looked into, and what was changed because of them.
 - `product-template/` — the files a new product starts with.
 - `install.sh` — copies `core/` into a product.
