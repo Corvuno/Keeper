@@ -6,6 +6,13 @@
 set -e
 SRC="$1"; DST="$2"
 [ -d "$SRC/core" ] && [ -d "$DST" ] || { echo "usage: install.sh <keeper checkout> <product root>" >&2; exit 2; }
+# The generic part stays small: a Keeper that has grown past these sizes is not installed.
+SIZE=$(cat "$SRC"/core/skills/keeper/*.md "$SRC"/core/agents/*.md | wc -c | tr -d ' ')
+MAIN=$(wc -c < "$SRC/core/skills/keeper/SKILL.md" | tr -d ' ')
+if [ "$SIZE" -gt 24000 ] || [ "$MAIN" -gt 9000 ]; then
+  echo "Keeper not installed: it has grown too large ($SIZE characters in all, $MAIN in SKILL.md). Shorten it first." >&2
+  exit 1
+fi
 LIST="$DST/.claude/keeper-core.txt"
 NEW=$(cd "$SRC/core" && find . -type f | sed 's#^\./##' | LC_ALL=C sort)
 if [ -f "$LIST" ]; then
