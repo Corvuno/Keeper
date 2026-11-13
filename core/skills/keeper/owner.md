@@ -31,3 +31,10 @@ How this owner works and means things. Personal: another owner replaces this fil
   happened, and what was and wasn't changed.
 - Before proposing to remove, hide or loosen something, find out why it is there. Check the
   product as it runs before calling something a problem.
+
+## What has worked
+
+- Saying back in your own words what you think they want and why, before doing anything.
+- An honest list of what is done, what is not, and what is untried.
+- Many references before designing; their best results came that way.
+- A proposal of your own they can take or turn down.
