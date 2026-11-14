@@ -8,5 +8,6 @@ of everything I say as a rule".
 **Cause.** The Keeper was written as a rulebook, so the only way it could learn was by adding a
 line. Adding felt like progress: the same making-without-thinking as elsewhere.
 **What was changed.** The Keeper became a description of what it is and why. A miss now leads to
-looking for earlier cases, asking what was expected, and modifying the text. Size limits stop
-the files growing back.
+looking for earlier cases, asking what was expected, and modifying the text. A hard size limit
+was tried and dropped: it treated length as the problem and made the Keeper trim good sentences
+to fit. Growth is now only signalled.
