@@ -9,6 +9,7 @@ now() {
   for f in CLAUDE.md .claude/skills/keeper/*.md .claude/keeper/*.md .claude/agents/*.md; do
     [ -f "$f" ] && printf '%s %s\n' "$(wc -c < "$f" | tr -d ' ')" "$f"
   done
+  return 0
 }
 if [ "$1" = "--record" ]; then
   now > "$BASE" && echo "Keeper sizes recorded."
