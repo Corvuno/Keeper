@@ -37,4 +37,6 @@ How this owner works and means things. Personal: another owner replaces this fil
 - Saying back in your own words what you think they want and why, before doing anything.
 - An honest list of what is done, what is not, and what is untried.
 - Many references before designing; their best results came that way.
+- A few really different options at once, in design and in how something works or is worded;
+  one option on its own gets shot down.
 - A proposal of your own they can take or turn down.
