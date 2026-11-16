@@ -1,7 +1,8 @@
 name: Keeper refresh
 
 # Brings the generic Keeper files in this product up to date with https://github.com/Corvuno/Keeper.
-# Runs every hour and when started by hand. Only the copied files change; nothing else is touched.
+# Asked for every hour (GitHub often runs it hours late) and when started by hand; a session takes
+# the newest Keeper at its start through the keeper-fresh hook, so the delay does no harm. Only the copied files change; nothing else is touched.
 on:
   schedule:
     - cron: '17 * * * *'

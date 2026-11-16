@@ -2,6 +2,7 @@
   "hooks": {
     "SessionStart": [
       { "hooks": [
+        { "type": "command", "command": "sh \"$CLAUDE_PROJECT_DIR/.claude/hooks/keeper-fresh.sh\"" },
         { "type": "command", "command": "sh \"$CLAUDE_PROJECT_DIR/.claude/hooks/keeper-main-checks.sh\"" },
         { "type": "command", "command": "sh \"$CLAUDE_PROJECT_DIR/.claude/hooks/keeper-size.sh\"" }
       ] }

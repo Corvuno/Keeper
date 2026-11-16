@@ -26,15 +26,16 @@ own cases.
 
 1. Copy `product-template/.github/workflows/keeper-refresh.yml` and the files under
    `product-template/.claude/keeper/` into the product.
-2. Add the two hooks from `product-template/settings-hooks.json` to the product's
+2. Add the hooks from `product-template/settings-hooks.json` to the product's
    `.claude/settings.json`.
 3. Point the product's `CLAUDE.md` at the Keeper: "Every session is the Keeper: follow
    `.claude/skills/keeper/SKILL.md` from the first message."
-4. Start the "Keeper refresh" job once. From then on it runs every hour and brings in changes
-   made here.
+4. Start the "Keeper refresh" job once. From then on every conversation in the product takes
+   the newest Keeper when it starts, and the job lands it on the main branch a few times a day.
 
 A Claude session can do all four steps; ask it to "add the Keeper to this product".
 
 ## Changing the Keeper
 
-Change it here, never in a product's copy. The copies follow within the hour.
+Change it here, never in a product's copy. A product takes the change at the start of its next
+conversation.

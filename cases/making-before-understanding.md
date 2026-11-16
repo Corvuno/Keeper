@@ -17,3 +17,9 @@ or a correction skipped it, and the learning steps ended in "change the text", w
 took as the job. Now everything the owner says, except a plain instruction, runs through the
 brainstorming skill in one order: what is going on, what they wanted, a proposal, then a build
 on their yes. The note before every message carries that order.
+**And once more, in design.** Four card back rounds in a product were drawn on a guess of what the
+owner liked in a reference, and one ended as a copy; it turned when the Keeper said in words what
+the references share and the owner agreed. A lone "." was read as a yes and a full design drawn.
+The owner: "I'd like a question instead of a guess." Drawing had counted as a way of asking. Now
+a guess about the owner is asked, a picture is making like any build, a design topic and each new
+reference open with a question and no picture, and a "." only means carry on.
