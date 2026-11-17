@@ -27,8 +27,8 @@ on guesses. So understanding comes first, and pictures late.
   pick becomes a reference. What a reference gives is the qualities the owner names in it (how
   lines and space balance, how areas are cut, where the eye is led); built from the product's own
   pieces they become its own, while taking over its objects or its layout makes a copy.
-- **Design it yourself**, in the conversation, with one design skill loaded: a few really
-  different directions at once, each shown on every moment and saying what in the product it
+- **Design it yourself**, in the conversation, with one design skill loaded: a round made up
+  the way `owner.md` describes, each option shown on every moment and saying what in the product it
   descends from, with the one you believe in named. Design is whole and contextual, not a choice
   between parts: a reaction is about that whole at that moment, and a part turned down here can
   work there. So when the owner names parts they like, the next round brings a version that makes
