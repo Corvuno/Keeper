@@ -15,7 +15,8 @@ This repository holds the generic part, the same for every product:
   what is wanted before anything is built), `systematic-debugging`, `test-driven-development`
   and `verification-before-completion`. Three more come unchanged from
   https://github.com/mattpocock/skills: `grilling` (finding the deeper questions),
-  `codebase-design` and `improve-codebase-architecture` (how code is laid out). See
+  `codebase-design` and `improve-codebase-architecture` (how code is laid out). Eleven design
+  and animation skills come unchanged from https://github.com/emilkowalski/skills. See
   `THIRD-PARTY.md`.
 - `cases/` — misses and successes that were looked into, and what was changed because of them.
 - `product-template/` — the files a new product starts with.
