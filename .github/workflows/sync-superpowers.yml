@@ -1,9 +1,12 @@
 name: Update the borrowed skills
 
-# Four skills in core/skills/ are copied unchanged from https://github.com/obra/superpowers (MIT):
-# brainstorming, systematic-debugging, test-driven-development, verification-before-completion.
-# This keeps them up to date with their source. Runs every Monday and when started by hand.
-# Only those four folders are touched.
+# Seven skills in core/skills/ are copied unchanged from their sources (both MIT):
+# from https://github.com/obra/superpowers: brainstorming, systematic-debugging,
+#   test-driven-development, verification-before-completion;
+# from https://github.com/mattpocock/skills: grilling, codebase-design,
+#   improve-codebase-architecture.
+# This keeps them up to date with their sources. Runs every Monday and when started by hand.
+# Only those seven folders are touched.
 on:
   schedule:
     - cron: "40 4 * * 1"
@@ -29,6 +32,19 @@ jobs:
               echo "::warning::$s no longer exists upstream; kept the old copy"
             fi
           done
+      - name: Fetch Matt Pocock's skills
+        run: git clone --depth 1 https://github.com/mattpocock/skills "$RUNNER_TEMP/mattpocock"
+      - name: Copy the three skills
+        run: |
+          for s in productivity/grilling engineering/codebase-design engineering/improve-codebase-architecture; do
+            n=$(basename "$s")
+            if [ -d "$RUNNER_TEMP/mattpocock/skills/$s" ]; then
+              rm -rf "core/skills/$n"
+              cp -r "$RUNNER_TEMP/mattpocock/skills/$s" "core/skills/$n"
+            else
+              echo "::warning::$s no longer exists upstream; kept the old copy"
+            fi
+          done
       - name: Land the change, if there is one
         run: |
           git add -A core/skills
@@ -36,5 +52,6 @@ jobs:
           SHA=$(git -C "$RUNNER_TEMP/superpowers" rev-parse --short HEAD)
           git config user.name "Keeper skills update"
           git config user.email "keeper-skills@users.noreply.github.com"
-          git commit -m "Borrowed skills updated to obra/superpowers $SHA"
+          MP=$(git -C "$RUNNER_TEMP/mattpocock" rev-parse --short HEAD)
+          git commit -m "Borrowed skills updated to obra/superpowers $SHA and mattpocock/skills $MP"
           git push -q
