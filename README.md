@@ -15,10 +15,12 @@ This repository holds the generic part, the same for every product:
   what is wanted before anything is built), `systematic-debugging`, `test-driven-development`
   and `verification-before-completion`. Three more come unchanged from
   https://github.com/mattpocock/skills: `grilling` (finding the deeper questions),
-  `codebase-design` and `improve-codebase-architecture` (how code is laid out). Eleven design
+  `codebase-design` and `improve-codebase-architecture` (how code is laid out). Fourteen design
   and animation skills come unchanged from https://github.com/emilkowalski/skills. `frontend-design`
-  comes unchanged from https://github.com/anthropics/claude-plugins-official. See
-  `THIRD-PARTY.md`.
+  comes unchanged from https://github.com/anthropics/claude-plugins-official, and `impeccable`
+  (a design vocabulary that keeps a product's look in one `DESIGN.md`) from
+  https://github.com/pbakaus/impeccable. Taste, Transitions.dev and Mobbin are not copied in; the
+  designer fetches them when a job needs one (`core/agents/designer.md`). See `THIRD-PARTY.md`.
 - `cases/` — misses and successes that were looked into, and what was changed because of them.
 - `product-template/` — the files a new product starts with.
 - `install.sh` — copies `core/` into a product.

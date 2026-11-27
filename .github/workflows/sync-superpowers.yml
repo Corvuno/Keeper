@@ -1,15 +1,17 @@
 name: Update the borrowed skills
 
-# Eighteen skills in core/skills/ are copied unchanged from their sources (all MIT):
+# Twenty-two skills in core/skills/ are copied unchanged from their sources (MIT, impeccable Apache 2.0):
 # from https://github.com/obra/superpowers: brainstorming, systematic-debugging,
 #   test-driven-development, verification-before-completion;
 # from https://github.com/mattpocock/skills: grilling, codebase-design,
 #   improve-codebase-architecture;
 # from https://github.com/emilkowalski/skills: mobile-native, break-ui, animate,
 #   review-animations, animation-performance, find-animation-opportunities, improve-animations,
-#   apple-design, prototype, emil-design-eng, animation-vocabulary.
+#   apple-design, prototype, emil-design-eng, animation-vocabulary, pick-ui-library, learn-taste,
+#   choreograph;
+# from https://github.com/pbakaus/impeccable: impeccable.
 # This keeps them up to date with their sources. Runs every Monday and when started by hand.
-# Only those eighteen folders are touched.
+# Only those twenty-two folders are touched.
 on:
   schedule:
     - cron: "40 4 * * 1"
@@ -50,11 +52,11 @@ jobs:
           done
       - name: Fetch Emil Kowalski's skills
         run: git clone --depth 1 https://github.com/emilkowalski/skills "$RUNNER_TEMP/emil"
-      - name: Copy the eleven skills
+      - name: Copy the fourteen skills
         run: |
           for s in mobile-native break-ui animate review-animations animation-performance \
                    find-animation-opportunities improve-animations apple-design prototype \
-                   emil-design-eng animation-vocabulary; do
+                   emil-design-eng animation-vocabulary pick-ui-library learn-taste choreograph; do
             if [ -d "$RUNNER_TEMP/emil/skills/$s" ]; then
               rm -rf "core/skills/$s"
               cp -r "$RUNNER_TEMP/emil/skills/$s" "core/skills/$s"
@@ -62,6 +64,16 @@ jobs:
               echo "::warning::$s no longer exists upstream; kept the old copy"
             fi
           done
+      - name: Fetch Impeccable
+        run: git clone --depth 1 https://github.com/pbakaus/impeccable "$RUNNER_TEMP/impeccable"
+      - name: Copy Impeccable
+        run: |
+          if [ -d "$RUNNER_TEMP/impeccable/.claude/skills/impeccable" ]; then
+            rm -rf core/skills/impeccable
+            cp -r "$RUNNER_TEMP/impeccable/.claude/skills/impeccable" core/skills/impeccable
+          else
+            echo "::warning::impeccable no longer exists upstream; kept the old copy"
+          fi
       - name: Land the change, if there is one
         run: |
           git add -A core/skills
@@ -71,5 +83,6 @@ jobs:
           git config user.email "keeper-skills@users.noreply.github.com"
           MP=$(git -C "$RUNNER_TEMP/mattpocock" rev-parse --short HEAD)
           EK=$(git -C "$RUNNER_TEMP/emil" rev-parse --short HEAD)
-          git commit -m "Borrowed skills updated to obra/superpowers $SHA, mattpocock/skills $MP and emilkowalski/skills $EK"
+          IM=$(git -C "$RUNNER_TEMP/impeccable" rev-parse --short HEAD)
+          git commit -m "Borrowed skills updated to obra/superpowers $SHA, mattpocock/skills $MP, emilkowalski/skills $EK and pbakaus/impeccable $IM"
           git push -q

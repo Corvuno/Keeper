@@ -55,9 +55,9 @@ SOFTWARE.
 
 ---
 
-Eleven skills in `core/skills/` (mobile-native, break-ui, animate, review-animations,
+Fourteen skills in `core/skills/` (mobile-native, break-ui, animate, review-animations,
 animation-performance, find-animation-opportunities, improve-animations, apple-design, prototype,
-emil-design-eng, animation-vocabulary) are copied unchanged from
+emil-design-eng, animation-vocabulary, pick-ui-library, learn-taste, choreograph) are copied unchanged from
 https://github.com/emilkowalski/skills and stay under its licence:
 
 MIT License
@@ -87,3 +87,10 @@ SOFTWARE.
 One skill in `core/skills/` (frontend-design) is copied unchanged from
 https://github.com/anthropics/claude-plugins-official (`plugins/frontend-design`) and stays under
 its licence, the Apache License 2.0, whose full text is in `core/skills/frontend-design/LICENSE.txt`.
+
+---
+
+One skill in `core/skills/` (impeccable) is copied unchanged from https://github.com/pbakaus/impeccable
+(`.claude/skills/impeccable`) and stays under its licence, the Apache License 2.0
+(https://www.apache.org/licenses/LICENSE-2.0). Its launcher downloads the Impeccable engine on
+first use and checks it against `scripts/engine-checksums.txt`.
