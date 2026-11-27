@@ -81,3 +81,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+One skill in `core/skills/` (frontend-design) is copied unchanged from
+https://github.com/anthropics/claude-plugins-official (`plugins/frontend-design`) and stays under
+its licence, the Apache License 2.0, whose full text is in `core/skills/frontend-design/LICENSE.txt`.

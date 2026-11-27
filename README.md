@@ -8,7 +8,7 @@ engineer and the one who keeps things moving.
 This repository holds the generic part, the same for every product:
 
 - `core/` — what the Keeper is (`skills/keeper/`), its helpers (`agents/`: one builder, one
-  checker, one searcher) and its reminders (`hooks/`). `skills/keeper/owner.md` is personal to
+  checker, one searcher, one designer) and its reminders (`hooks/`). `skills/keeper/owner.md` is personal to
   the owner and is the one file another owner would replace.
 - `core/skills/` also holds skills borrowed unchanged from
   https://github.com/obra/superpowers and kept up to date with it: `brainstorming` (finding out
@@ -16,7 +16,8 @@ This repository holds the generic part, the same for every product:
   and `verification-before-completion`. Three more come unchanged from
   https://github.com/mattpocock/skills: `grilling` (finding the deeper questions),
   `codebase-design` and `improve-codebase-architecture` (how code is laid out). Eleven design
-  and animation skills come unchanged from https://github.com/emilkowalski/skills. See
+  and animation skills come unchanged from https://github.com/emilkowalski/skills. `frontend-design`
+  comes unchanged from https://github.com/anthropics/claude-plugins-official. See
   `THIRD-PARTY.md`.
 - `cases/` — misses and successes that were looked into, and what was changed because of them.
 - `product-template/` — the files a new product starts with.
