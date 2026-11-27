@@ -40,6 +40,13 @@ own cases.
 
 A Claude session can do all four steps; ask it to "add the Keeper to this product".
 
+When the product is worked on in a Claude project, some sessions (the project chat's
+coordinator above all) run without the repository and often cannot reach GitHub, so they never
+read the Keeper. Two more things cover them: put the Keeper's core, in a few short paragraphs,
+in the project instructions, which every session gets; and keep a copy of the full Keeper in the
+project's files, refreshed weekly by a scheduled task that also proposes a new core block when
+the Keeper changes. See `cases/coordinator-swap-without-keeper.md`.
+
 ## Changing the Keeper
 
 Change it here, never in a product's copy. A product takes the change at the start of its next
